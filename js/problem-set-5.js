@@ -186,7 +186,7 @@ for (i=2; i<==16; i=i+2; ) {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-
+Math.random
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
