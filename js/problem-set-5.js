@@ -31,10 +31,11 @@ function mario() {
   while (height>23 || height<1) {
     height = prompt("Please make sure integer is between 1 and 23.");
   }
-  for (let i=0; i==height; i++) {
+
+  for (let i=0; i<=height; i++) {
     for (let k=0; k<i; k++) {
-        system.out.print("#");
-    }
+    }let p=document.getElementById("mario-easy-ouput");
+    p.innerHTML=("#");
   }
 
 
@@ -125,6 +126,27 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+  card = prompt("Please enter valid credit card number.");
+  if (card % 10 != 0) {
+    card = prompt("Make sure than number is an integer.");
+  }
+let sum = 0
+for (i=2; i<==16; i=i+2; ) {
+  let digit= ((card % 10**i) - card % 10**(i-1))/(10**(i-1));
+  let digit= (digit*2)
+  if (digit>9) {
+    let sumDigit= (digit % 10) + 1 ;
+    }   else {
+    sumDigit= digit;
+  }
+  sum = sum+sumDigit
+}
+
+  if (sum % 10 = 0) {
+    sum = valid
+  } else if (sum % 10 != 0){
+    sum = invalid
+  }
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
