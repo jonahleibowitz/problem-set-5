@@ -27,18 +27,29 @@ function mario() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 1 CODE HERE
-  height = prompt("Enter an integer between 1 and 23.");
-  while (height>23 || height<1) {
-    height = prompt("Please make sure integer is between 1 and 23.");
+  while (true) {
+    height = Number(prompt("Please enter integer is between 1 and 23."));
+    if(height>=1 && height<=23 && Number.isInteger(height)){
+      break;
+    }
+
   }
-
-  for (let i=0; i<=height; i++) {
-    for (let k=0; k<i; k++) {
-    }let p=document.getElementById("mario-easy-ouput");
-    p.innerHTML=("#");
+  let i=1;
+  let hash= "#";
+  let spaces= height-2;
+  let lines= "<code>";
+  while (i <= height){
+    let blank="";
+    for(let b=0;b<=spaces;b++){
+      blank+= "&nbsp";
+    }
+    spaces--;
+    hash+="#";
+    lines=lines+blank+hash+"</br>"
+    i++;
   }
-
-
+document.getElementById("mario-easy-ouput").innerHTML=lines;
+lines+="</code>"
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -126,27 +137,27 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-  card = prompt("Please enter valid credit card number.");
-  if (card % 10 != 0) {
-    card = prompt("Make sure than number is an integer.");
-  }
-let sum = 0
-for (i=2; i<==16; i=i+2; ) {
-  let digit= ((card % 10**i) - card % 10**(i-1))/(10**(i-1));
-  let digit= (digit*2)
-  if (digit>9) {
-    let sumDigit= (digit % 10) + 1 ;
-    }   else {
-    sumDigit= digit;
-  }
-  sum = sum+sumDigit
-}
+  //card = prompt("Please enter valid credit card number.");
+  //if (card % 10 != 0) {
+  //  card = prompt("Make sure than number is an integer.");
+  //}
+//let sum = 0
+//for (i=2; i<==16; i=i+2; ) {
+//  let digit= ((card % 10**i) - card % 10**(i-1))/(10**(i-1));
+//  let digit= (digit*2)
+  //if (digit>9) {
+    //let sumDigit= (digit % 10) + 1 ;
+    //}   else {
+    //sumDigit= digit;
+  //}
+  //sum = sum+sumDigit
+//}
 
-  if (sum % 10 = 0) {
-    sum = valid
-  } else if (sum % 10 != 0){
-    sum = invalid
-  }
+  //if (sum % 10 = 0) {
+//    sum = valid
+//  } else if (sum % 10 != 0){
+//    sum = invalid
+//  }//
 
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
