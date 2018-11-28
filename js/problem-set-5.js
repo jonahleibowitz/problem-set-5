@@ -33,23 +33,25 @@ function mario() {
       break;
     }
 
+
   }
   let i=1;
-  let hash= "#";
+  let hash= `#`;
   let spaces= height-2;
   let lines= "<code>";
   while (i <= height){
-    let blank="";
+    let blank=` `;
     for(let b=0;b<=spaces;b++){
-      blank+= "&nbsp";
+      blank+= "&nbsp;";
     }
     spaces--;
-    hash+="#";
+    hash+=`#`;
     lines=lines+blank+hash+"</br>"
     i++;
   }
-document.getElementById("mario-easy-ouput").innerHTML=lines;
-lines+="</code>"
+lines = lines + "<br>";
+document.getElementById("mario-easy-output").innerHTML=lines;
+lines=lines+"</code>"
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -197,7 +199,17 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-Math.random
+let answer= Math.floor((Math.random() * 1000) + 1);
+let gcounter = 0;
+let cguess = false;
+while (cguess == false) {
+ let guess= Number(prompt("Guess an integer between 1 and 1,000."))
+ if(guess>1000 || guess<1){
+   guess=Number(prompt("Make sure integer is between 1 and 1,000."))
+ }
+}
+for (let gcounter=1; guess == answer; gcounter++ ){
+
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
@@ -232,7 +244,21 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+windspeed= Number(prompt("Please enter windspeed."))
+if (windspeed>= 39 && windspeed<=73){
+  let stormType= "Tropical Storm"
+} else if (windspeed>= 74 && windspeed<=95){
+  let stormType= "Category 1"
+} else if (windspeed>= 96 && windspeed<=110){
+  let stormType= "Category 2"
+} else if (windspeed>= 111 && windspeed<=129){
+  let stormType= "Category 3"
+} else if (windspeed>= 130 && windspeed<=156){
+  let stormType= "Category 4"
+} else if (windspeed>= 157){
+  let stormType= "Category 5"}
 
+  document.getElementById("hurricane-ouput()").innerHTML= stormType
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
