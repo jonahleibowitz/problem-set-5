@@ -354,6 +354,9 @@ function reportCard() {
    *       grades the user enters, respectively.
    */
 
+
+
+
   /////////////////////// DO NOT MODIFY
   check('report-card', // DO NOT MODIFY
     testTotal, ////////// DO NOT MODIFY
@@ -364,4 +367,4 @@ function reportCard() {
     homeworks /////////// DO NOT MODIFY
   ); //////////////////// DO NOT MODIFY
   /////////////////////// DO NOT MODIFY
-}
+};
