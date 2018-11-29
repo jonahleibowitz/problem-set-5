@@ -223,16 +223,26 @@ function credit() {
 function guess() {
 
   // WRITE YOUR EXERCISE 4 CODE HERE
-let answer= Math.floor((Math.random() * 1000) + 1);
+let answer= Math.floor((Math.random() * 999) + 1);
 let gcounter = 0;
 let cguess = false;
 while (cguess == false) {
  let guess= Number(prompt("Guess an integer between 1 and 1,000."))
- if(guess>1000 || guess<1){
-   guess=Number(prompt("Make sure integer is between 1 and 1,000."))
+     if(guess>=1 && guess<=1000 && Number.isInteger(guess)){
+       if (guess==answer){
+       gcounter++;
+       cguess=true;
+       alert("Correct!");
+       document.getElementByID("guess-output").innerHTML="Number: "+answer+"</br>Attempts: "+gcounter;
+       } else if (guess > answer){
+       gcounter++;
+       alert("Too high.")
+       } else if(guess < answer){
+       gcounter++;
+        alert("Too low.")
+       }
  }
 }
-for (let gcounter=1; guess == answer; gcounter++ ){
 
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
