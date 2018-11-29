@@ -354,6 +354,20 @@ function gymnastics() {
    *       scores.push(firstScore);   // your variable names for your scores
    *       scores.push(secondScore);  // will likely be different than mine
    */
+   let entered=0
+   while (entered<6){
+//scores = prompt("Please enter 6 scores one by one.");
+//entered++;
+
+let score1= prompt("Please enter 6 scores one by one.");
+let score2= prompt("Please enter 6 scores one by one.");
+let score3= prompt("Please enter 6 scores one by one.");
+let score4= prompt("Please enter 6 scores one by one.");
+let score5= prompt("Please enter 6 scores one by one.");
+let score6= prompt("Please enter 6 scores one by one.");
+}
+document.getElementById("gymnastics-output").innerHTML=scores
+let average= ((score1+score2+score3+score4)/4)
 
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
