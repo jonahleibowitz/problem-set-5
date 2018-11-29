@@ -270,19 +270,24 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
 windspeed= Number(prompt("Please enter windspeed."))
 if (windspeed>= 39 && windspeed<=73){
-  let stormType= "Tropical Storm"
-} else if (windspeed>= 74 && windspeed<=95){
-  let stormType= "Category 1"
-} else if (windspeed>= 96 && windspeed<=110){
-  let stormType= "Category 2"
-} else if (windspeed>= 111 && windspeed<=129){
-  let stormType= "Category 3"
-} else if (windspeed>= 130 && windspeed<=156){
-  let stormType= "Category 4"
-} else if (windspeed>= 157){
-  let stormType= "Category 5"}
+  document.getElementByID("hurricane-output").innerHTML="Tropical Storm"
+  } 
+  else if (windspeed>= 74 && windspeed<=95){
+  document.getElementByID("hurricane-output").innerHTML="Category 1"
+} 
+  else if (windspeed>= 96 && windspeed<=110){
+  document.getElementByID("hurricane-output").innerHTML="Category 2"
+} 
+  else if (windspeed>= 111 && windspeed<=129){
+  document.getElementByID("hurricane-output").innerHTML="Category 3"
+} 
+  else if (windspeed>= 130 && windspeed<=156){
+  document.getElementByID("hurricane-output").innerHTML="Category 4"
+} 
+  else if (windspeed>= 157){
+  document.getElementByID("hurricane-output").innerHTML="Category 5"
+  }
 
-  document.getElementById("hurricane-ouput()").innerHTML= stormType
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
