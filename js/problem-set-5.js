@@ -86,7 +86,31 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
+  
+ while (true) {
+    height = Number(prompt("Please enter integer is between 1 and 23."));
+    if(height>=1 && height<=23 && Number.isInteger(height)){
+      break;
+    }
 
+  }
+  let i=1;
+  let hash= `#`;
+  let spaces= height-2;
+  let lines= "<code>";
+  while (i <= height){
+    let blank=` `;
+    for(let b=0;b<=spaces;b++){
+      blank+= "&nbsp;";
+    }
+    spaces--;
+    hash+=`#`;
+    lines=lines+blank+hash+"&nbsp"+"&nbsp"+hash+"</br>";
+    i++;
+  }
+lines = lines + "<br>";
+document.getElementById("mario-easy-output").innerHTML=lines;
+lines=lines+"</code>"
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
