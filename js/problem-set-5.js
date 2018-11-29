@@ -86,7 +86,7 @@ function marioAgain() {
   ////////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 2 CODE HERE
-  
+
  while (true) {
     height = Number(prompt("Please enter integer is between 1 and 23."));
     if(height>=1 && height<=23 && Number.isInteger(height)){
@@ -109,7 +109,7 @@ function marioAgain() {
     i++;
   }
 lines = lines + "<br>";
-document.getElementById("mario-easy-output").innerHTML=lines;
+document.getElementById("mario-hard-output").innerHTML=lines;
 lines=lines+"</code>"
   //////////////////////////////// DO NOT MODIFY
   check('mario-again', height); // DO NOT MODIFY
@@ -163,6 +163,17 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
+
+
+
+
+
+
+
+
+
+
+
   //card = prompt("Please enter valid credit card number.");
   //if (card % 10 != 0) {
   //  card = prompt("Make sure than number is an integer.");
@@ -233,7 +244,7 @@ while (cguess == false) {
        gcounter++;
        cguess=true;
        alert("Correct!");
-       document.getElementByID("guess-output").innerHTML="Number: "+answer+"</br>Attempts: "+gcounter;
+       document.getElementById("guess-output").innerHTML="Number: "+answer+"</br>Attempts: "+gcounter;
        } else if (guess > answer){
        gcounter++;
        alert("Too high.")
@@ -280,22 +291,25 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
 windspeed= Number(prompt("Please enter windspeed."))
 if (windspeed>= 39 && windspeed<=73){
-  document.getElementByID("hurricane-output").innerHTML="Tropical Storm"
-  } 
+  document.getElementById("hurricane-output").innerHTML="Tropical Storm."
+  }
+  else if(windspeed<39){
+    document.getElementById("hurricane-output").innerHTML="The skies are calm..."
+  }
   else if (windspeed>= 74 && windspeed<=95){
-  document.getElementByID("hurricane-output").innerHTML="Category 1"
-} 
+  document.getElementById("hurricane-output").innerHTML="Category 1 Hurricane."
+}
   else if (windspeed>= 96 && windspeed<=110){
-  document.getElementByID("hurricane-output").innerHTML="Category 2"
-} 
+  document.getElementById("hurricane-output").innerHTML="Category 2 Hurricane."
+}
   else if (windspeed>= 111 && windspeed<=129){
-  document.getElementByID("hurricane-output").innerHTML="Category 3"
-} 
+  document.getElementById("hurricane-output").innerHTML="Category 3 Hurricane."
+}
   else if (windspeed>= 130 && windspeed<=156){
-  document.getElementByID("hurricane-output").innerHTML="Category 4"
-} 
+  document.getElementById("hurricane-output").innerHTML="Category 4 Hurricane."
+}
   else if (windspeed>= 157){
-  document.getElementByID("hurricane-output").innerHTML="Category 5"
+  document.getElementById("hurricane-output").innerHTML="Category 5 Hurricane."
   }
 
   ///////////////////////////////// DO NOT MODIFY
