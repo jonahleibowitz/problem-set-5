@@ -32,15 +32,13 @@ function mario() {
     if(height>=1 && height<=23 && Number.isInteger(height)){
       break;
     }
-
-
   }
   let i=1;
   let hash= `#`;
   let spaces= height-2;
   let lines= "<code>";
   while (i <= height){
-    let blank=` `;
+    let blank=``;
     for(let b=0;b<=spaces;b++){
       blank+= "&nbsp;";
     }
@@ -49,9 +47,9 @@ function mario() {
     lines=lines+blank+hash+"</br>"
     i++;
   }
-lines = lines + "<br>";
-document.getElementById("mario-easy-output").innerHTML=lines;
-lines=lines+"</code>"
+  lines=lines+"</code>"
+  console.log(lines);
+  document.getElementById("mario-easy-output").innerHTML=lines;
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
@@ -99,7 +97,7 @@ function marioAgain() {
   let spaces= height-2;
   let lines= "<code>";
   while (i <= height){
-    let blank=` `;
+    let blank=``;
     for(let b=0;b<=spaces;b++){
       blank+= "&nbsp;";
     }
@@ -108,7 +106,7 @@ function marioAgain() {
     lines=lines+blank+hash+"&nbsp"+"&nbsp"+hash+"</br>";
     i++;
   }
-lines = lines + "<br>";
+//lines = lines + "<br>";
 document.getElementById("mario-hard-output").innerHTML=lines;
 lines=lines+"</code>"
   //////////////////////////////// DO NOT MODIFY
@@ -163,15 +161,13 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-  let sumEven=0
-  let sumOdd=0
-  while(true){
-    card = Number(prompt("Please enter valid credit card number."))
-    if ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card)){
-    break;
-    }
-  }
-  
+
+  do{
+    card = Number(prompt("Please enter valid credit card number."));
+  }while ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card));
+
+  let sumEven=0;
+  let sumOdd=0;
   for(i=card.length-2; i>=0; i-=2){
   let digit= Number(card[i])*2;
   let stringDig= digit.toString();
@@ -179,28 +175,28 @@ function credit() {
     for (j=0; j<stringDig.length; j++){
     sum=sum+Number(stringDig[j]);
     }
-  sumEven= sum+sumEven
+  sumEven= sum+sumEven;
   }
-  
+
   for(k=card.length-1; k>=0; k-=2){
-  sumOdd = sumOdd+Number(card[k])
+  sumOdd = sumOdd+Number(card[k]);
   }
   let sumTotal= sumOdd+sumEven;
-  
-  if(card-(card % 10**13)==37 || card-(card % 10**13)==34 && sumTotal % 10==0){
+  let cardStr=card.toString();
+  if((cardStr.charAt(0)=3) && (cardStr.charAt(1)=4 || card.charAt(1)=7)) && sumTotal % 10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/amex.png'/>";  }
-  
+
  else if
    (card-(card % 10**12)==4 || card-(card % 10**15)==4 && sumTotal % 10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";  }
-  
+
  else if
    (card-(card % 10**14)==51 || card-(card % 10**15)==51 || card-(card % 10**15)==53 || card-(card % 10**15)==54 || card-(card % 10**15)==55 && sumTotal % 10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";  }
-  
+
   else {
-    document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>";
-  
+    document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>"; }
+
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -243,7 +239,7 @@ let answer= Math.floor((Math.random() * 999) + 1);
 let gcounter = 0;
 let cguess = false;
 while (cguess == false) {
- let guess= Number(prompt("Guess an integer between 1 and 1,000."))
+ let guess= Number(prompt("Guess an integer between 1 and 1,000."));
      if(guess>=1 && guess<=1000 && Number.isInteger(guess)){
        if (guess==answer){
        gcounter++;
@@ -252,10 +248,10 @@ while (cguess == false) {
        document.getElementById("guess-output").innerHTML="Number: "+answer+"</br>Attempts: "+gcounter;
        } else if (guess > answer){
        gcounter++;
-       alert("Too high.")
+       alert("Too high.");
        } else if(guess < answer){
        gcounter++;
-        alert("Too low.")
+        alert("Too low.");
        }
  }
 }
@@ -294,27 +290,27 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
-windspeed= Number(prompt("Please enter windspeed."))
+windspeed= Number(prompt("Please enter windspeed."));
 if (windspeed>= 39 && windspeed<=73){
-  document.getElementById("hurricane-output").innerHTML="Tropical Storm."
+  document.getElementById("hurricane-output").innerHTML="Tropical Storm.";
   }
   else if(windspeed<39){
-    document.getElementById("hurricane-output").innerHTML="The skies are calm..."
+    document.getElementById("hurricane-output").innerHTML="The skies are calm...";
   }
   else if (windspeed>= 74 && windspeed<=95){
-  document.getElementById("hurricane-output").innerHTML="Category 1 Hurricane."
+  document.getElementById("hurricane-output").innerHTML="Category 1 Hurricane.";
 }
   else if (windspeed>= 96 && windspeed<=110){
-  document.getElementById("hurricane-output").innerHTML="Category 2 Hurricane."
+  document.getElementById("hurricane-output").innerHTML="Category 2 Hurricane.";
 }
   else if (windspeed>= 111 && windspeed<=129){
-  document.getElementById("hurricane-output").innerHTML="Category 3 Hurricane."
+  document.getElementById("hurricane-output").innerHTML="Category 3 Hurricane.";
 }
   else if (windspeed>= 130 && windspeed<=156){
-  document.getElementById("hurricane-output").innerHTML="Category 4 Hurricane."
+  document.getElementById("hurricane-output").innerHTML="Category 4 Hurricane.";
 }
   else if (windspeed>= 157){
-  document.getElementById("hurricane-output").innerHTML="Category 5 Hurricane."
+  document.getElementById("hurricane-output").innerHTML="Category 5 Hurricane.";
   }
 
   ///////////////////////////////// DO NOT MODIFY
@@ -359,26 +355,26 @@ function gymnastics() {
    *       scores.push(firstScore);   // your variable names for your scores
    *       scores.push(secondScore);  // will likely be different than mine
    */
-   let entered=0
+   let entered=0;
    while (entered<6){
     let sixScores = Number(prompt("Please enter 6 scores one by one."));
      if (sixScores>=1 && sixScores<=10 && Number.isInteger(sixScores)){
      scores.push(sixScores);
-     
+
      entered++;
      }
-     
-   scores.sort(function(a, b){return a-b};) 
+
+   scores.sort(function(a, b){return a-b});
     let high=scores[5];
     let low=scores[0];
-    
+
     let scoresUsed=[];
     for(let j=1; j<5; j++){
-      scoresUsed.push(scores[j])
+      scoresUsed.push(scores[j]);
     }
      let average = ((scoresUsed[0]+scoresUsed[1]+scoresUsed[2]+scoresUsed[3])/4).toFixed(2);
-    
-    document.getElementById("gymastics-output").innerHTML="Discarded: "+low+", "+high+"</br>Score: "+average;
+
+    document.getElementById("gymastics-output").innerHTML="Discarded: " + low + ", " + high + "</br>Score: " + average;
 }
 
   /////////////////////////////// DO NOT MODIFY
@@ -432,10 +428,10 @@ function reportCard() {
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
-  let gradeTests=0
-  
+  let gradeTests=0;
+
 while(true){
-gradeTests= Number(prompt("Please enter test grades."))
+gradeTests= Number(prompt("Please enter test grades."));
   if (gradeTests==-1){
   break;
   }
@@ -444,11 +440,11 @@ gradeTests= Number(prompt("Please enter test grades."))
   tests++;
   }
 }
-  
-  let gradeQuizzes=0
-  
+
+  let gradeQuizzes=0;
+
 while(true){
-gradeQuizzes= Number(prompt("Please enter quiz grades."))
+gradeQuizzes= Number(prompt("Please enter quiz grades."));
   if (gradeQuizzes==-1){
   break;
   }
@@ -458,10 +454,10 @@ gradeQuizzes= Number(prompt("Please enter quiz grades."))
   }
 }
 
-  let gradeHomeworks=0
-  
+  let gradeHomeworks=0;
+
 while(true){
-gradeHomeworks= Number(prompt("Please enter homework grades."))
+gradeHomeworks= Number(prompt("Please enter homework grades."));
   if (gradeHomeworks==-1){
   break;
   }
@@ -470,12 +466,12 @@ gradeHomeworks= Number(prompt("Please enter homework grades."))
   homeworks++;
   }
 }
-  
-  let testAverage= (testTotal/tests).toFixed.(2);
-  let quizAverage= (quizTotal/quizzes).toFixed.(2);
-  let homeworkAverage= (homeworkTotal/homeworks).toFixed.(2);
-  let grade= (0.6*testAverage)+(0.3*quizAverage)+(0.1*homeworkAverage)
-  document.getElementById("report-card-output").innerHTML="Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "+homeworkAverage+"</br>Grade: "+grade
+
+  let testAverage= (testTotal/tests).toFixed(2);
+  let quizAverage= (quizTotal/quizzes).toFixed(2);
+  let homeworkAverage= (homeworkTotal/homeworks).toFixed(2);
+  let grade= ((0.6*testAverage)+(0.3*quizAverage)+(0.1*homeworkAverage)).toFixed(2);
+  document.getElementById("report-card-output").innerHTML="Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "+homeworkAverage+"</br>Grade: "+grade;
 
 
   /////////////////////// DO NOT MODIFY
@@ -488,4 +484,4 @@ gradeHomeworks= Number(prompt("Please enter homework grades."))
     homeworks /////////// DO NOT MODIFY
   ); //////////////////// DO NOT MODIFY
   /////////////////////// DO NOT MODIFY
-};
+}
