@@ -361,19 +361,25 @@ function gymnastics() {
    */
    let entered=0
    while (entered<6){
-//scores = prompt("Please enter 6 scores one by one.");
-//entered++;
-
-let score1= prompt("Please enter 6 scores one by one.");
-     scores
-let score2= prompt("Please enter 6 scores one by one.");
-let score3= prompt("Please enter 6 scores one by one.");
-let score4= prompt("Please enter 6 scores one by one.");
-let score5= prompt("Please enter 6 scores one by one.");
-let score6= prompt("Please enter 6 scores one by one.");
+    let sixScores = Number(prompt("Please enter 6 scores one by one."));
+     if (sixScores>=1 && sixScores<=10 && Number.isInteger(sixScores)){
+     scores.push(sixScores);
+     
+     entered++;
+     }
+     
+   scores.sort(function(a, b){return a-b};) 
+    let high=scores[5];
+    let low=scores[0];
+    
+    let scoresUsed=[];
+    for(let j=1; j<5; j++){
+      scoresUsed.push(scores[j])
+    }
+     let average = ((scoresUsed[0]+scoresUsed[1]+scoresUsed[2]+scoresUsed[3])/4).toFixed(2);
+    
+    document.getElementById("gymastics-output").innerHTML="Discarded: "+low+", "+high+"</br>Score: "+average;
 }
-document.getElementById("gymnastics-output").innerHTML=scores
-let average= ((score1+score2+score3+score4)/4)
 
   /////////////////////////////// DO NOT MODIFY
   check('gymnastics', scores); // DO NOT MODIFY
