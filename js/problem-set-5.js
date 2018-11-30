@@ -182,12 +182,12 @@ function credit() {
   sumOdd = sumOdd+Number(card[k]);
   }
   let sumTotal= sumOdd+sumEven;
-  let cardStr=card.toString();
-  if((cardStr.charAt(0)=3) && (cardStr.charAt(1)=4 || card.charAt(1)=7)) && sumTotal % 10==0){
+
+  if(card.length==15 && (card[0]==3 && (card[1]==4 || card[1]==7)) && sumTotal%10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/amex.png'/>";  }
 
  else if
-   (card-(card % 10**12)==4 || card-(card % 10**15)==4 && sumTotal % 10==0){
+    ((card.length==16 || card.length==13) && card[0]==4 && sumTotal%10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";  }
 
  else if
