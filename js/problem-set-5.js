@@ -163,39 +163,44 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
-
-
-
-
-
-
-
-
-
-
-  //card = prompt("Please enter valid credit card number.");
-  //if (card % 10 != 0) {
-  //  card = prompt("Make sure than number is an integer.");
-  //}
-//let sum = 0
-//for (i=2; i<==16; i=i+2; ) {
-//  let digit= ((card % 10**i) - card % 10**(i-1))/(10**(i-1));
-//  let digit= (digit*2)
-  //if (digit>9) {
-    //let sumDigit= (digit % 10) + 1 ;
-    //}   else {
-    //sumDigit= digit;
-  //}
-  //sum = sum+sumDigit
-//}
-
-  //if (sum % 10 = 0) {
-//    sum = valid
-//  } else if (sum % 10 != 0){
-//    sum = invalid
-//  }//
-
+  let sumEven=0
+  let sumOdd=0
+  while(true){
+    card = Number(prompt("Please enter valid credit card number."))
+    if ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card)){
+    break;
+    }
+  }
+  
+  for(i=card.length-2; i>=0; i-=2){
+  let digit= Number(card[i])*2;
+  let stringDig= digit.toString();
+  let sum=0;
+    for (j=0; j<stringDig.length; j++){
+    sum=sum+Number(stringDig[j]);
+    }
+  sumEven= sum+sumEven
+  }
+  
+  for(k=card.length-1; k>=0; k-=2){
+  sumOdd = sumOdd+Number(card[k])
+  }
+  let sumTotal= sumOdd+sumEven;
+  
+  if(card-(card % 10**13)==37 || card-(card % 10**13)==34 && sumTotal % 10==0){
+   document.getElementById("credit-output").innerHTML="<img src ='./images/amex.png'/>";  }
+  
+ else if
+   (card-(card % 10**12)==4 || card-(card % 10**15)==4 && sumTotal % 10==0){
+   document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";  }
+  
+ else if
+   (card-(card % 10**14)==51 || card-(card % 10**15)==51 || card-(card % 10**15)==53 || card-(card % 10**15)==54 || card-(card % 10**15)==55 && sumTotal % 10==0){
+   document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";  }
+  
+  else {
+    document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>";
+  
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -360,6 +365,7 @@ function gymnastics() {
 //entered++;
 
 let score1= prompt("Please enter 6 scores one by one.");
+     scores
 let score2= prompt("Please enter 6 scores one by one.");
 let score3= prompt("Please enter 6 scores one by one.");
 let score4= prompt("Please enter 6 scores one by one.");
