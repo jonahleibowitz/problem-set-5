@@ -432,8 +432,50 @@ function reportCard() {
    *       representative of the number of tests, quizzes, and homework
    *       grades the user enters, respectively.
    */
+  let gradeTests=0
+  
+while(true){
+gradeTests= Number(prompt("Please enter test grades."))
+  if (gradeTests==-1){
+  break;
+  }
+  else if (gradeTests>=0 && gradeTests<=100){
+  testTotal= Number(gradeTests)+testTotal;
+  tests++;
+  }
+}
+  
+  let gradeQuizzes=0
+  
+while(true){
+gradeQuizzes= Number(prompt("Please enter quiz grades."))
+  if (gradeQuizzes==-1){
+  break;
+  }
+  else if (gradeQuizzes>=0 && gradeQuizzes<=100){
+  quizTotal= Number(gradeQuizzes)+quizTotal;
+  quizzes++;
+  }
+}
 
-
+  let gradeHomeworks=0
+  
+while(true){
+gradeHomeworks= Number(prompt("Please enter homework grades."))
+  if (gradeHomeworks==-1){
+  break;
+  }
+  else if (gradeHomeworks>=0 && gradeHomeworks<=100){
+  homeworkTotal= Number(gradeHomeworks)+homeworkTotal;
+  homeworks++;
+  }
+}
+  
+  let testAverage= (testTotal/tests).toFixed.(2);
+  let quizAverage= (quizTotal/quizzes).toFixed.(2);
+  let homeworkAverage= (homeworkTotal/homeworks).toFixed.(2);
+  let grade= (0.6*testAverage)+(0.3*quizAverage)+(0.1*homeworkAverage)
+  document.getElementById("report-card-output").innerHTML="Tests: "+testAverage+"</br>Quizzes: "+quizAverage+"</br>Homework: "+homeworkAverage+"</br>Grade: "+grade
 
 
   /////////////////////// DO NOT MODIFY
