@@ -194,7 +194,7 @@ function credit() {
    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";  }
 
  else if
-   (card.length==16 && card[0]==5 && (card[1]==1 || card[1]==2 || card[1]==3 || card[1]==4 || card[1]==5)){
+   (card.length==16 && card[0]==5 && (card[1]==1 || card[1]==2 || card[1]==3 || card[1]==4 || card[1]==5) && sumTotal%10==0){
    document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";  }
 
   else {
