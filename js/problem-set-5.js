@@ -162,8 +162,8 @@ function credit() {
 
   // WRITE YOUR EXERCISE 3 CODE HERE
   while(true) {
-    card = Number(prompt("Please enter valid credit card number."))
-    if ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card)){
+    card = Number(prompt("Please enter valid credit card number."));
+    if ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(Number(card))){
     break;
     }
     
