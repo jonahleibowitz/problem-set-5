@@ -161,11 +161,15 @@ function credit() {
   //////////// DO NOT MODIFY
 
   // WRITE YOUR EXERCISE 3 CODE HERE
-
-  do{
+  while(true) {
     card = Number(prompt("Please enter valid credit card number."));
-  }while ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card));
+    if ((card.length==13 || card.length==15 || card.length==16) && Number.isInteger(card)){
+    break;
+    }
+    
+  }
 
+    
   let sumEven=0;
   let sumOdd=0;
   for(i=card.length-2; i>=0; i-=2){
