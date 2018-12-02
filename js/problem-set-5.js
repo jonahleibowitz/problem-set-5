@@ -28,7 +28,7 @@ function mario() {
 
   // WRITE YOUR EXERCISE 1 CODE HERE
   while (true) {
-    height = Number(prompt("Please enter integer is between 1 and 23."));
+    height = Number(prompt("Please enter integer between 1 and 23."));
     if(height>=1 && height<=23 && Number.isInteger(height)){
       break;
     }
@@ -86,7 +86,7 @@ function marioAgain() {
   // WRITE YOUR EXERCISE 2 CODE HERE
 
  while (true) {
-    height = Number(prompt("Please enter integer is between 1 and 23."));
+    height = Number(prompt("Please enter integer between 1 and 23."));
     if(height>=1 && height<=23 && Number.isInteger(height)){
       break;
     }
@@ -194,7 +194,7 @@ function credit() {
    document.getElementById("credit-output").innerHTML="<img src ='./images/visa.png'/>";  }
 
  else if
-   (card-(card % 10**14)==51 || card-(card % 10**15)==51 || card-(card % 10**15)==53 || card-(card % 10**15)==54 || card-(card % 10**15)==55 && sumTotal % 10==0){
+   (card.length==16 && card[0]==5 && (card[1]==1 || card[1]==2 card[1]==3 card[1]==4 card[1]==5)){
    document.getElementById("credit-output").innerHTML="<img src ='./images/mastercard.png'/>";  }
 
   else {
