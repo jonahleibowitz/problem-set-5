@@ -165,10 +165,10 @@ function credit() {
     card =prompt("Please enter valid credit card number.");
     if ((card.length==16 || card.length==15 || card.length==13) && Number.isInteger(Number(card))){
     break;
-    } 
+    }
   }
 
-    
+
   let sumEven=0;
   let sumOdd=0;
   for(i=card.length-2; i>=0; i-=2){
@@ -200,6 +200,7 @@ function credit() {
   else {
     document.getElementById("credit-output").innerHTML="<img src ='./images/invalid.png'/>"; }
 
+card=Number(card);
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -358,16 +359,16 @@ function gymnastics() {
    *       scores.push(firstScore);   // your variable names for your scores
    *       scores.push(secondScore);  // will likely be different than mine
    */
-   let entered=0;
-   while (entered<6){
+   let entered=1;
+   while(entered<=6){
     let sixScores = Number(prompt("Please enter 6 scores one by one."));
-     if (sixScores>=1 && sixScores<=10 && Number.isInteger(sixScores)){
-     scores.push(sixScores);
-
+     if(sixScores>=1 && sixScores<=10 && Number.isInteger(sixScores)){
+       scores.push(sixScores);
+       console.log(scores)
      entered++;
      }
 
-   scores.sort(function(a, b){return a-b});
+   scores.sort(function(a,b){return a-b});
     let high=scores[5];
     let low=scores[0];
 
@@ -377,7 +378,7 @@ function gymnastics() {
     }
      let average = ((scoresUsed[0]+scoresUsed[1]+scoresUsed[2]+scoresUsed[3])/4).toFixed(2);
 
-    document.getElementById("gymastics-output").innerHTML="Discarded: " + low + ", " + high + "</br>Score: " + average;
+    document.getElementById("gymnastics-output").innerHTML="Discarded: " + low + ", " + high + "</br>Score: " + average;
 }
 
   /////////////////////////////// DO NOT MODIFY
